@@ -1,0 +1,33 @@
+pipeline {
+	agent any
+	stages {
+		stage('Test') {
+			steps {
+				sh 'echo "Successo!"; exit 0'
+			}
+		}
+		stage('Deploy') {
+			steps {
+				sh 'echo "Successo!"; exit 0'
+			}
+		}
+	}
+	post {
+		always {
+			echo 'Esta parte será sempre executada'
+		}
+		success {
+			echo 'Vai ser executada se o build for bem sucedida'
+		}
+		failure {
+			echo 'Aparecerá se o build falhar !!!!'
+			}
+		unstable {
+			echo 'Será executada somente se a execução for marcada estável'
+		}
+		changed {
+			echo 'Será executado somente se o estado do Pipeline tiver mudado'
+			echo 'Por exemplo, se o Pipeline falhasse anteriormente, mas agora é bem sucedido'
+		}
+	}
+}

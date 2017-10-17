@@ -1,0 +1,10 @@
+<!DOCKTYPE html>
+<html>
+	<head>
+		<title>Hello World, sejam benvindos ao Pipeline-Blue Ocean</title>
+	</head>
+	<body>
+	</body>
+</html>
+
+
