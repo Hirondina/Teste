@@ -1,23 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            echo 'sucesso!'
-          }
-        }
-        stage('') {
-          steps {
-            echo 'Sucesso!'
-          }
-        }
+    stage('Inicial') {
+      steps {
+        sleep 1
       }
     }
-    stage('Teste') {
+    stage('Build') {
       steps {
-        error 'Erro...!'
+        git(url: 'git@github.com:Hirondina/teste1.git', credentialsId: 'Hironina', branch: '1')
+      }
+    }
+    stage('Report') {
+      steps {
+        powershell 'echo "Sucesso...!"'
       }
     }
   }
