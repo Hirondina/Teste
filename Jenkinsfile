@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        git(url: 'git@github.com:Hirondina/teste1.git', credentialsId: 'Hironina', branch: '1')
+        git(url: 'https://github.com/Hirondina/Teste.git', credentialsId: 'Hironina', branch: '1')
       }
     }
     stage('Report') {
